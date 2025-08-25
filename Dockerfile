@@ -12,6 +12,8 @@ COPY . .
 
 RUN mkdir -p /files/media
 
+RUN mkdir -p /files/static
+
 RUN adduser \
     --disabled-password\
     --no-create-home\
@@ -19,5 +21,8 @@ RUN adduser \
 
 RUN chown -R my_user /files/media
 RUN chmod -R 755 /files/media
+
+RUN chown -R my_user /files/static
+RUN chmod -R 755 /files/static
 
 USER my_user
